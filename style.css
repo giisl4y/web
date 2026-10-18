@@ -1,0 +1,498 @@
+
+/* DISEÑO GENERAL */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+    --rosa: #f3a6b8;
+    --rosa-claro: #fff0f4;
+    --lila: #c8b8f5;
+    --lila-claro: #f3efff;
+    --verde: #b9dfc8;
+    --verde-claro: #edf8f0;
+    --oscuro: #393044;
+    --texto: #716a7b;
+    --blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #fffbfd;
+    color: var(--oscuro);
+    line-height: 1.7;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Nunito', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* BARRA SUPERIOR */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: rgba(255, 251, 253, 0.96);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #f5eaf0;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #bd6e8a;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: var(--texto);
+    font-size: 0.92rem;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #c56e91;
+}
+
+/* PORTADA PRINCIPAL */
+.portada {
+    min-height: 570px;
+    padding: 75px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background: linear-gradient(135deg, #fff0f4, #f7f1ff, #f4fbf5);
+    overflow: hidden;
+}
+
+.contenido-portada {
+    max-width: 620px;
+    animation: aparecer 0.8s ease;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: #ffffffc9;
+    color: #b76b8b;
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.portada h1 {
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    line-height: 1.12;
+    margin: 22px 0;
+    letter-spacing: -1.5px;
+}
+
+.portada p {
+    max-width: 540px;
+    color: var(--texto);
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+.boton-principal {
+    display: inline-block;
+    padding: 14px 26px;
+    background: #d783a0;
+    color: white;
+    font-weight: 800;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px #d783a033;
+    transition: 0.3s;
+}
+
+.boton-principal:hover {
+    transform: translateY(-4px);
+    background: #bd6e8a;
+}
+
+/* ILUSTRACIÓN DECORATIVA */
+.ilustracion {
+    position: relative;
+    min-width: 280px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circulo {
+    width: 265px;
+    height: 265px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #f6b8cb, #d5c5ff);
+    box-shadow: 15px 18px 0 #ffffff80;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-5deg);
+}
+
+.corazon {
+    font-size: 7rem;
+    line-height: 1.1;
+    color: white;
+}
+
+.texto-circulo {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.estrella, .flor {
+    position: absolute;
+    color: #c27d9b;
+}
+
+.estrella-1 {
+    top: 10px;
+    right: 5px;
+    font-size: 3.5rem;
+}
+
+.estrella-2 {
+    bottom: 10px;
+    left: 0;
+    font-size: 4rem;
+    color: #a995e5;
+}
+
+.flor {
+    top: 40px;
+    left: 10px;
+    font-size: 3rem;
+    color: #a4c9af;
+}
+
+/* SECCIÓN DE TARJETAS */
+.secciones {
+    padding: 90px 8%;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-seccion h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin: 15px 0 8px;
+}
+
+.titulo-seccion p {
+    color: var(--texto);
+}
+
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjeta {
+    padding: 32px 27px;
+    border-radius: 25px;
+    border: 1px solid #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 18px 35px #5c476715;
+}
+
+.tarjeta-rosa {
+    background: var(--rosa-claro);
+}
+
+.tarjeta-lila {
+    background: var(--lila-claro);
+}
+
+.tarjeta-verde {
+    background: var(--verde-claro);
+}
+
+.icono {
+    width: 58px;
+    height: 58px;
+    background: white;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 22px;
+    color: #b76b8b;
+}
+
+.tarjeta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.tarjeta p {
+    color: var(--texto);
+    font-size: 0.96rem;
+    margin-bottom: 24px;
+}
+
+.boton-tarjeta {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 12px;
+    background: white;
+    color: var(--oscuro);
+    font-size: 0.9rem;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.boton-tarjeta:hover {
+    background: var(--oscuro);
+    color: white;
+}
+
+/* MENSAJE FINAL */
+.mensaje {
+    text-align: center;
+    padding: 65px 10%;
+    margin: 0 8% 75px;
+    background: #f7f1ff;
+    border-radius: 30px;
+}
+
+.comillas {
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: #b6a2e9;
+}
+
+.mensaje h2 {
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    margin-bottom: 15px;
+}
+
+.mensaje p {
+    max-width: 650px;
+    margin: 0 auto 20px;
+    color: var(--texto);
+}
+
+.firma {
+    font-size: 0.9rem;
+    color: #9a78ca;
+    font-weight: 800;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    background: #fff0f4;
+    color: var(--texto);
+    font-size: 0.85rem;
+}
+
+/* ANIMACIÓN */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* DISEÑO PARA CELULARES Y TABLETS */
+@media (max-width: 900px) {
+    .portada {
+        padding: 65px 7%;
+        gap: 20px;
+    }
+
+    .ilustracion {
+        min-width: 220px;
+    }
+
+    .circulo {
+        width: 210px;
+        height: 210px;
+    }
+
+    .corazon {
+        font-size: 5rem;
+    }
+
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+    }
+}
+
+@media (max-width: 600px) {
+    .encabezado {
+        padding: 16px 5%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 0.83rem;
+    }
+
+    .portada {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 7%;
+    }
+
+    .portada p {
+        font-size: 0.97rem;
+    }
+
+    .ilustracion {
+        min-width: 0;
+        width: 100%;
+        height: 270px;
+    }
+
+    .circulo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .secciones {
+        padding: 65px 6%;
+    }
+
+    .tarjeta {
+        padding: 27px 23px;
+    }
+
+    .mensaje {
+        padding: 45px 7%;
+        margin: 0 5% 50px;
+    }
+}
+
+
+
+/* DISEÑO DE LAS TRES PAGINAS INTERNAS */
+.pagina-info {
+    max-width: 950px;
+    min-height: 75vh;
+    margin: 0 auto;
+    padding: 75px 30px;
+}
+
+.pagina-info h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin: 22px 0;
+}
+
+.intro {
+    font-size: 1.1rem;
+    color: var(--texto);
+    max-width: 750px;
+    margin-bottom: 35px;
+}
+
+.bloque-info {
+    padding: 28px;
+    margin: 22px 0;
+    border-radius: 22px;
+    background: white;
+    border: 1px solid #eee7f1;
+    box-shadow: 0 8px 25px #39304408;
+}
+
+.bloque-info h2 {
+    margin-bottom: 14px;
+    font-size: 1.45rem;
+}
+
+.bloque-info p,
+.bloque-info li {
+    color: var(--texto);
+}
+
+.bloque-info ul {
+    padding-left: 24px;
+}
+
+.bloque-info li {
+    padding: 6px 0;
+}
+
+.bloque-info a {
+    color: #a45c83;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.autocuidado {
+    background: linear-gradient(180deg, #fff4f7, #fffbfd 55%);
+}
+
+.prevencion {
+    background: linear-gradient(180deg, #f5f0ff, #fffbfd 55%);
+}
+
+.proteccion {
+    background: linear-gradient(180deg, #eff9f2, #fffbfd 55%);
+}
+
+.pagina-info > .boton-principal {
+    margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+    .pagina-info {
+        padding: 50px 7%;
+    }
+
+    .bloque-info {
+        padding: 23px 20px;
+    }
+}
